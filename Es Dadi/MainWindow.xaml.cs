@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Es_Dadi
 {
@@ -23,6 +25,35 @@ namespace Es_Dadi
         public MainWindow()
         {
             InitializeComponent();
+        }
+        bool lanciareDado = false;
+
+        private void btnLanciaDadi_Click(object sender, RoutedEventArgs e)
+        {
+            if (lanciareDado = true)
+            {
+                btnLanciaDadi.IsEnabled = true;
+                btnStoppaDadi.IsEnabled = false;
+            }
+            else
+            {
+                lanciareDado = true;
+                Lancia();
+            }
+
+        }
+
+        private void btnStoppaDadi_Click(object sender, RoutedEventArgs e)
+        {
+            if (lanciareDado = false)
+            {
+                btnStoppaDadi.IsEnabled = true;
+                btnLanciaDadi.IsEnabled = false;
+            }
+            else
+            {
+                lanciareDado = false;
+            }
         }
     }
 }
