@@ -53,7 +53,29 @@ namespace Es_Dadi
             else
             {
                 lanciareDado = false;
+                Lancia();
             }
+        }
+        private async void Lancia()
+        {
+            await Task.Run(() =>
+            {
+                if (lanciareDado == true)
+                {
+                    Random val = new Random();
+                    int dado1 = val.Next(1, 7);
+                    int dado2 = val.Next(1, 7);
+
+                    this.Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        Dadi1.Source = CambioDado("faccia dado " + dado1 + ".jpg");
+                        Dadi2.Source = CambioDado("faccia dado " + dado2 + ".jpg");
+
+                    }));
+                    Thread.Sleep(100);
+                    Lancia();
+                }
+            });
         }
     }
 }
