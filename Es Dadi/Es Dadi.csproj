@@ -94,5 +94,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Telo verde.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="faccia dado 1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="faccia dado 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="faccia dado 3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="faccia dado 4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="faccia dado 5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="faccia dado 6.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
