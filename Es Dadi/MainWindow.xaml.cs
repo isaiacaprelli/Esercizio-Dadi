@@ -30,28 +30,23 @@ namespace Es_Dadi
 
         private void btnLanciaDadi_Click(object sender, RoutedEventArgs e)
         {
-            if (lanciareDado == true)
+            
+            if (lanciareDado == false)
             {
-                btnLanciaDadi.IsEnabled = true;
-                btnStoppaDadi.IsEnabled = false;
-            }
-            else
-            {
+                btnLanciaDadi.IsEnabled = false;
+                btnStoppaDadi.IsEnabled = true;
                 lanciareDado = true;
                 Lancia();
             }
-
         }
 
         private void btnStoppaDadi_Click(object sender, RoutedEventArgs e)
         {
-            if (lanciareDado == false)
-            {
-                btnStoppaDadi.IsEnabled = true;
-                btnLanciaDadi.IsEnabled = false;
-            }
-            else
-            {
+            
+            if (lanciareDado == true) 
+            { 
+                btnStoppaDadi.IsEnabled = false;
+                btnLanciaDadi.IsEnabled = true;
                 lanciareDado = false;
             }
         }
@@ -68,10 +63,9 @@ namespace Es_Dadi
                     {
                         Dadi1.Source = CambioDado("faccia dado " + dado1 + ".jpg");
                         Dadi2.Source = CambioDado("faccia dado " + dado2 + ".jpg");
-
                     }));
-                    Thread.Sleep(1);
-                    Lancia();
+                    Thread.Sleep(100);
+                   Lancia();
                 }
             });
 
