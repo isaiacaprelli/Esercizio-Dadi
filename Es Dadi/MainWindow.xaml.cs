@@ -28,10 +28,10 @@ namespace Es_Dadi
         }
         bool lanciareDado = false;
 
-        private void btnLanciaDadi_Click(object sender, RoutedEventArgs e)
+        private void btnLanciaDadi_Click(object sender, RoutedEventArgs e) //bottone per far partire il dado
         {
             
-            if (lanciareDado == false)
+            if (lanciareDado == false)      //controlla se il dado è fermo
             {
                 btnLanciaDadi.IsEnabled = false;
                 btnStoppaDadi.IsEnabled = true;
@@ -40,10 +40,10 @@ namespace Es_Dadi
             }
         }
 
-        private void btnStoppaDadi_Click(object sender, RoutedEventArgs e)
+        private void btnStoppaDadi_Click(object sender, RoutedEventArgs e) //bottone per far stoppare il dado
         {
             
-            if (lanciareDado == true) 
+            if (lanciareDado == true)   //controlla se il dado si sta muovendo
             { 
                 btnStoppaDadi.IsEnabled = false;
                 btnLanciaDadi.IsEnabled = true;
@@ -57,19 +57,21 @@ namespace Es_Dadi
                 if (lanciareDado == true)
                 {
                     Random val = new Random();
+
                     int dado1 = val.Next(1, 7);
                     int dado2 = val.Next(1, 7);
                     this.Dispatcher.BeginInvoke(new Action(() =>
                     {
-                        Dadi1.Source = CambioDado("faccia dado " + dado1 + ".jpg");
+                        Dadi1.Source = CambioDado("faccia dado " + dado1 + ".jpg"); //facciamo cambiare immagine nella casella delle immagini nel wpf, in base al suo numero 
                         Dadi2.Source = CambioDado("faccia dado " + dado2 + ".jpg");
                     }));
+
                     Thread.Sleep(100);
                    Lancia();
                 }
             });
 
-            ImageSource CambioDado(string s)
+            ImageSource CambioDado(string s) //metodo per far cambiare le immagini 
             {
                 Uri u = new Uri(s, UriKind.Relative);
                 ImageSource immagine = new BitmapImage(u);
