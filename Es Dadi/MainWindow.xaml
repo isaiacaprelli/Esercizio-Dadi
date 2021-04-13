@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Image x:Name="TeloVerdeDaGioco" HorizontalAlignment="Left" Height="268" Margin="187,87,0,0" VerticalAlignment="Top" Width="401" Source="Telo verde.jpg"/>
+
+        <Button x:Name="btnLanciaDadi" Content="Lancia dadi" HorizontalAlignment="Left" Height="63" Margin="187,292,0,0" VerticalAlignment="Top" Width="98" Background="White" BorderBrush="Black" FontFamily="Stencil"/>
+        <Button x:Name="btnStoppaDadi" Content="Stoppa dadi" HorizontalAlignment="Left" Height="63" Margin="490,292,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="1,1" Background="White" BorderBrush="Black" FontFamily="Stencil"/>
+        <Image x:Name="Dadi1" HorizontalAlignment="Left" Height="62" Margin="262,153,0,0" VerticalAlignment="Top" Width="64" Source="faccia dado 1.jpg"/>
+        <Image x:Name="Dadi2" HorizontalAlignment="Left" Height="62" Margin="464,153,0,0" VerticalAlignment="Top" Width="63" Source="faccia dado 3.jpg"/>
+
     </Grid>
 </Window>
